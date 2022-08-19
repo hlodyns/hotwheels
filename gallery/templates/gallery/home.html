@@ -1,0 +1,22 @@
+{% extends "gallery/base.html" %}
+{% block content %}
+    {%for car in cars %}
+    <div class="card rounded">
+        <div class="card-image">
+            
+            <img class="img-fluid" src={{ car.image.url }} alt="Alternate Text" />
+        </div>
+        <div class="card-image-overlay m-auto">
+            <span class="card-detail-badge">{{ car.brand }}</span>
+            <span class="card-detail-badge">{{ car.model }}</span>
+            <span class="card-detail-badge">{{ car.year }}</span>
+        </div>
+        <div class="card-body text-center">
+            <div class="ad-title m-auto">
+                <h5>Honda Accord LX</h5>
+            </div>
+            <a class="ad-btn" href="#">View</a>
+        </div>
+    </div>
+{% endfor%}
+{% endblock content %}
