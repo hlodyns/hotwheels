@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import AddCarForm
 from .models import Car
+from django.contrib import messages
 
 def home(request):
     context = {
@@ -13,6 +14,7 @@ def addwheel(request):
         form = AddCarForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            messages.success(request, f'A new car has been added to your collection.')
             return redirect ('gallery-home')
         
     else:
