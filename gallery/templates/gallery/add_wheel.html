@@ -1,11 +1,16 @@
 {% extends "gallery/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <h3>Add your Hot Wheel to the collection!</h3>
-    
-    <form method = "post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit">Upload</button>
-    </form>
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Add Your Hot Wheel to Your Collection</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Add Your Wheel!!</button>    
+            </div>    
+        </form> 
+    </div>  
 {% endblock content %}
