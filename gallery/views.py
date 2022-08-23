@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import AddCarForm
 from .models import Car
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     context = {
@@ -9,6 +10,7 @@ def home(request):
     }
     return render(request, 'gallery/home.html', context)
 
+@login_required
 def addwheel(request):
     if request.method == 'POST':
         form = AddCarForm(request.POST, request.FILES)
