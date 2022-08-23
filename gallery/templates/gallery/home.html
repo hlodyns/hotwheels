@@ -8,8 +8,9 @@
         </div>
         <div class="card-image-overlay m-auto">
             <span class="card-detail-badge">{{ car.brand }}</span>
-            <span class="card-detail-badge">{{ car.model }}</span>
-            <span class="card-detail-badge">{{ car.year }}</span>
+            <span class="card-detail-badge">{{ car.model }},</span>
+            <span class="card-detail-badge">({{ car.year }})</span>
+            <span class="card-detail-badge">added by {{ car.author }}</span>
             
         </div>
         <div class="card-body text-center">
